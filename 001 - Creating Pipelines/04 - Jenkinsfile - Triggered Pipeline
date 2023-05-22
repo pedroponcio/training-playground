@@ -11,6 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'cat /etc/alpine-release'
+		sh 'echo "TimeStamp: ${Util.getTimeSpanString(System.currentTimeMillis())}"'
             }
         }
     }
