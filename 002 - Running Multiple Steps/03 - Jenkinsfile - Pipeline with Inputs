@@ -8,7 +8,6 @@ pipeline {
         stage('build') {
 	    input {
 	    	message "Please fill this form"
-		submitter "pedro"
 		parameters {
 			string(	name: 'NAME', description: 'what is your name')
 			string(	name: 'AGE', description: 'how old are you')
