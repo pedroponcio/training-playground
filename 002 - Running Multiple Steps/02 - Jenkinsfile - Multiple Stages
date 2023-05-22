@@ -16,7 +16,8 @@ pipeline {
   	    }
 	   }
 	 }
+	 }
 def saveAndPrintDate(filename = '') {
   sh "date > $filename && cat $filename"
 }
-}
+
