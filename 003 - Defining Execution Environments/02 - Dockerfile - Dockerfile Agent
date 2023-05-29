@@ -1,7 +1,6 @@
 pipeline {
     agent { 
-		docker { 
-			dockerfile {
+	dockerfile {
             dir '003 - Defining Execution Environments/02 - Dockerfile - Dockerfile Agent'
             filename '02 - Dockerfile - Dockerfile Agent'
 		}
