@@ -1,5 +1,2 @@
 FROM alpine:maven
-ARG ENV_VARIABLE="Value for build"
-RUN if [ "$ENV_VARIABLE" != "Value for build" ]; then exit 1; fi
-RUN apk add curl
-CMD ["sh"]
+
