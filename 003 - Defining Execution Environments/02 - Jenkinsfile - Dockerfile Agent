@@ -1,10 +1,16 @@
 pipeline {
     agent { 
+	dockerfile {
+            dir '003 - Defining Execution Environments'
+            filename '02 - Dockerfile - Dockerfile Agent'
+		}
 	}
     stages {
         stage('build') {
             steps {
-                sh 'if [ "$ENV_VARIABLE" != "Value for execution" ]; then exit 1; fi'
+            	sh "echo 'You need to install curl'"
+		sh "apk add curl"
+                sh "curl www.google.com"
             }
         }
     }
