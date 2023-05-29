@@ -1,3 +1,18 @@
-FROM alpine:latest
-ARG ENV_VARIABLE="Error"
-RUN if [ "$ENV_VARIABLE" != "Value for build" ]; then exit 1; fi
+pipeline {
+    agent { 
+		docker { 
+			dockerfile {
+            dir '003 - Defining Execution Environments/02 - Dockerfile - Dockerfile Agent'
+            filename '02 - Dockerfile - Dockerfile Agent'
+		}
+	}
+    stages {
+        stage('build') {
+            steps {
+            	sh "echo 'You need to install curl'"
+		sh "apk add curl"
+                sh "curl www.google.com"
+            }
+        }
+    }
+}
