@@ -1,9 +1,28 @@
 pipeline {
+    parameters {
+        choice(name: 'STAGE', choices: ['Build', 'Test'], description: 'Which stage?')
+    }
     agent { 
-		docker { 
-			image 'alpine:latest' 
-		}
-	}
+        docker { 
+            image 'alpine:latest' 
+        }
+    }
     stages {
+        stage('Build') {
+            when {
+                expression { params.STAGE == 'Build' }
+            }
+            steps {
+                echo "Building..."
+            }
+        }
+        stage('Test') {
+            when {
+                expression { params.STAGE == 'Test' }
+            }
+            steps {
+                echo "Testing..."
+            }
+        }
     }
 }
