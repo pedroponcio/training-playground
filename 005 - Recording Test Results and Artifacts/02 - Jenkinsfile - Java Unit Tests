@@ -1,13 +1,13 @@
 pipeline {
     agent { 
 		docker { 
-			image 'alpine:latest' 
+			image 'maven:latest' 
 		}
 	}
     stages {
         stage('tests') {
             steps {
-                sh "mvn clean & install -f '005 - Recording Test Results and Artifacts/02 - Java Unit Tests'"
+                sh "mvn clean & install -f '005 - Recording Test Results and Artifacts/02 - Java Unit Tests/pom.xml'"
             }
         }
     }
