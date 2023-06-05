@@ -1,13 +1,14 @@
 pipeline {
     agent { 
 		docker { 
-			image 'alpine:latest' 
+			image 'maven:3.3.3'
+			args '--net="training-playground"'
 		}
 	}
     stages {
         stage('tests') {
             steps {
-                sh ""
+                sh "mvn clean "
             }
         }
     }
