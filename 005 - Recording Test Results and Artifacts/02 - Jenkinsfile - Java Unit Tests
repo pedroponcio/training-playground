@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('tests') {
             steps {
-                sh "mvn clean & install -F 005 - Recording Test Results and Artifacts/02 - Java Unit Tests"
+                sh "mvn clean & install -f 005 - Recording Test Results and Artifacts/02 - Java Unit Tests"
             }
         }
     }
