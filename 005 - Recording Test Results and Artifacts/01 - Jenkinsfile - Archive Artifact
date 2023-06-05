@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "curl www.google.com"
+	    	sh 'apk add --no-cache.curl'
+                sh "curl -o google_html.html www.google.com"
+		archiveArtifacts artifacts: 'google_html.html'
             }
         }
     }
