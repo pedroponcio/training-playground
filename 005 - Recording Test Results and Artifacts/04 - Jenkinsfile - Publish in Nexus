@@ -10,7 +10,7 @@ pipeline {
             steps {
  		sh "mvn clean install -f '005 - Recording Test Results and Artifacts/04 - Publish in Nexus/pom.xml'"
 		sh "mvn sonar:sonar -f '005 - Recording Test Results and Artifacts/04 - Publish in Nexus/pom.xml' -Dsonar.host.url=http://sonarqube:9000"
-		sh "mvn deploy:deploy-file -Durl=http://nexus:8081/repository/maven-releases/ -Dfile='005 - Recording Test Results and Artifacts/04 - Publish in Nexus/target/my-java-artifact.jar' -DgroupId=com.example -DartifactId=my-java-artifact -Dpackaging=jar -Dversion=1.0.0 -DrepositoryId=my-repo-id"
+		sh "mvn deploy:deploy-file -Durl=http://nexus:8081/repository/maven-releases/ -Dfile='005 - Recording Test Results and Artifacts/04 - Publish in Nexus/target/my-java-artifact.jar' -DgroupId=training -DartifactId=training-Pedro -Dpackaging=jar -Dversion=1.0.0 -DrepositoryId=maven-releases"
             }
         }
     }
